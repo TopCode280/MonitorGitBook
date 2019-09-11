@@ -359,16 +359,116 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="&#x62A5;&#x8B66;&#x4FA6;&#x6D4B;&#x6D88;&#x606F;&#x63A5;&#x6536;">&#x62A5;&#x8B66;&#x4FA6;&#x6D4B;&#x6D88;&#x606F;&#x63A5;&#x6536;</h1>
-<h5 id="&#x62A5;&#x8B66;&#x4FA6;&#x6D4B;&#x6570;&#x636E;&#x5B9E;&#x4F53;--json&#x683C;&#x5F0F;">&#x62A5;&#x8B66;&#x4FA6;&#x6D4B;&#x6570;&#x636E;&#x5B9E;&#x4F53;  (JSON&#x683C;&#x5F0F;)</h5>
-<pre><code class="lang-java"><span class="hljs-keyword">private</span> Long id;
-<span class="hljs-keyword">private</span> String userAccount;      <span class="hljs-comment">// &#x7528;&#x6237;ID</span>
-<span class="hljs-keyword">private</span> String deviceName;       <span class="hljs-comment">// &#x8BBE;&#x5907;&#x540D;&#x79F0;</span>
-<span class="hljs-keyword">private</span> <span class="hljs-keyword">long</span> timeStamp;          <span class="hljs-comment">// &#x65F6;&#x95F4;&#x6233;</span>
-<span class="hljs-keyword">private</span> String deviceUid;        <span class="hljs-comment">// &#x8BBE;&#x5907;UID</span>
-<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> type;                <span class="hljs-comment">// &#x4FA6;&#x6D4B;&#x7C7B;&#x578B;  1:&#x79FB;&#x52A8;&#x4FA6;&#x6D4B;  2:&#x58F0;&#x97F3;&#x4FA6;&#x6D4B;  4:&#x54ED;&#x58F0;&#x68C0;&#x6D4B;  5:&#x7269;&#x4F53;&#x68C0;&#x6D4B;  6:&#x4EBA;&#x8138;  7:&#x4EBA;&#x5F62;</span>
-<span class="hljs-keyword">private</span> String imageName;        <span class="hljs-comment">// &#x56FE;&#x7247;&#x540D;&#x79F0;</span>
-</code></pre>
-<h6 id="app&#x5EFA;&#x8BAE;&#x96C6;&#x6210;&#x53CB;&#x76DF;&#x63A8;&#x9001;&#xFF0C;&#x70B9;&#x51FB;&#x4E0B;&#x65B9;&#x94FE;&#x63A5;&#x5FEB;&#x901F;&#x96C6;&#x6210;">APP&#x5EFA;&#x8BAE;&#x96C6;&#x6210;&#x53CB;&#x76DF;&#x63A8;&#x9001;&#xFF0C;&#x70B9;&#x51FB;&#x4E0B;&#x65B9;&#x94FE;&#x63A5;&#x5FEB;&#x901F;&#x96C6;&#x6210;</h6>
+<p><strong>1. &#x4E0A;&#x4F20;&#x62A5;&#x8B66;&#x6D88;&#x606F;</strong></p>
+<h6 id="&#x670D;&#x52A1;&#x5668;&#x63A5;&#x53E3;&#x51FD;&#x6570;">&#x670D;&#x52A1;&#x5668;&#x63A5;&#x53E3;&#x51FD;&#x6570;</h6>
+<blockquote>
+<p>&#x63A5;&#x6536;&#x62A5;&#x8B66;&#x6D88;&#x606F;</p>
+</blockquote>
+<h6 id="url">URL</h6>
+<blockquote>
+<p>/pushMsg</p>
+</blockquote>
+<p>&#x7F16;&#x7801;&#x683C;&#x5F0F;</p>
+<blockquote>
+<p>application/x-www-form-urlencoded</p>
+</blockquote>
+<h6 id="http-&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;">HTTP &#x8BF7;&#x6C42;&#x65B9;&#x5F0F;</h6>
+<blockquote>
+<p>POST</p>
+</blockquote>
+<h6 id="request-parameters">request parameters</h6>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">parameter</th>
+<th style="text-align:left">required</th>
+<th style="text-align:left">type</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">deviceUid</td>
+<td style="text-align:left">ture</td>
+<td style="text-align:left">string</td>
+<td>Device id</td>
+</tr>
+<tr>
+<td style="text-align:left">msgType</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">int</td>
+<td>Alarm type</td>
+</tr>
+<tr>
+<td style="text-align:left">timeStamp</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">long</td>
+<td>The UTC timestamp</td>
+</tr>
+<tr>
+<td style="text-align:left">imageName</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">string</td>
+<td>Absolute  path of alarm picture on device sd card</td>
+</tr>
+<tr>
+<td style="text-align:left">imageUrl</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">string</td>
+<td>Deprecated,always null</td>
+</tr>
+<tr>
+<td style="text-align:left">deviceName</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">string</td>
+<td>The alias  which set by camera.setDeviceAlias</td>
+</tr>
+<tr>
+<td style="text-align:left">moduleName</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">string</td>
+<td>The alias of device or the name of external sensor</td>
+</tr>
+</tbody>
+</table>
+<h5 id="1-&#x5982;&#x679C;-camerasetphpseverhttpmsgkhjdevicecom5656&#x90A3;&#x4E48;&#x8B66;&#x62A5;&#x6D88;&#x606F;&#x5C06;&#x53D1;&#x5E03;&#x5230;-httpmsgkhjdevicecom5656pushmsg">1. &#x5982;&#x679C; camera.setPhpSever(&quot;<a href="http://msg.khjdevice.com:5656&quot;),&#x90A3;&#x4E48;&#x8B66;&#x62A5;&#x6D88;&#x606F;&#x5C06;&#x53D1;&#x5E03;&#x5230;" target="_blank">http://msg.khjdevice.com:5656&quot;),&#x90A3;&#x4E48;&#x8B66;&#x62A5;&#x6D88;&#x606F;&#x5C06;&#x53D1;&#x5E03;&#x5230;</a> &quot;<a href="http://msg.khjdevice.com:5656/pushMsg" target="_blank">http://msg.khjdevice.com:5656/pushMsg</a>&quot;</h5>
+<h5 id="2-&#x5728;&#x65E7;&#x7684;&#x56FA;&#x4EF6;&#x7248;&#x672C;&#x4E2D;&#xFF0C;devicename&#x548C;modulename&#x53EF;&#x80FD;&#x4E3A;null&#xFF0C;&#x4F46;&#x5728;&#x5C06;&#x6765;&#x7684;&#x53D1;&#x884C;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x786E;&#x4FDD;&#x8BBE;&#x5907;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x6B63;&#x786E;&#xFF01;">2. &#x5728;&#x65E7;&#x7684;&#x56FA;&#x4EF6;&#x7248;&#x672C;&#x4E2D;&#xFF0C;deviceName&#x548C;moduleName&#x53EF;&#x80FD;&#x4E3A;null&#xFF0C;&#x4F46;&#x5728;&#x5C06;&#x6765;&#x7684;&#x53D1;&#x884C;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x786E;&#x4FDD;&#x8BBE;&#x5907;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x6B63;&#x786E;&#xFF01;</h5>
+<h5 id="3&#x5173;&#x4E8E;msgtype&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x6444;&#x50CF;&#x673A;&#x652F;&#x6301;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x8B66;&#x62A5;&#x3002;">3.&#x5173;&#x4E8E;msgType&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x6444;&#x50CF;&#x673A;&#x652F;&#x6301;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x8B66;&#x62A5;&#x3002;</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">msgType</th>
+<th style="text-align:left">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">motion detection</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">sound detection</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">face detection</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left">Human detection</td>
+</tr>
+<tr>
+<td style="text-align:left">greater than 255</td>
+<td style="text-align:left">external sensor detection</td>
+</tr>
+</tbody>
+</table>
+<h6 id="&#x8FD4;&#x56DE;">&#x8FD4;&#x56DE;</h6>
+<blockquote>
+<p>Camera&#x5FFD;&#x7565;&#x6765;&#x81EA;&#x670D;&#x52A1;&#x5668;&#x7684;&#x8FD4;&#x56DE;</p>
+</blockquote>
+<p>APP&#x5EFA;&#x8BAE;&#x96C6;&#x6210;&#x53CB;&#x76DF;&#x63A8;&#x9001;&#xFF0C;&#x70B9;&#x51FB;&#x4E0B;&#x65B9;&#x94FE;&#x63A5;&#x5FEB;&#x901F;&#x96C6;&#x6210;</p>
 <p><a href="https://developer.umeng.com/docs/119267/cate/118577" target="_blank">https://developer.umeng.com/docs/119267/cate/118577</a></p>
 
                                 
@@ -409,7 +509,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"报警侦测消息接收","level":"1.7.1","depth":2,"previous":{"title":"消息推送","level":"1.7","depth":1,"path":"MessagePush/MessagePush.md","ref":"MessagePush/MessagePush.md","articles":[{"title":"报警侦测消息接收","level":"1.7.1","depth":2,"path":"MessagePush/AlarmMessageReceive.md","ref":"MessagePush/AlarmMessageReceive.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"MessagePush/AlarmMessageReceive.md","mtime":"2019-09-10T10:01:13.358Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-11T09:34:48.583Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"报警侦测消息接收","level":"1.7.1","depth":2,"previous":{"title":"消息推送","level":"1.7","depth":1,"path":"MessagePush/MessagePush.md","ref":"MessagePush/MessagePush.md","articles":[{"title":"报警侦测消息接收","level":"1.7.1","depth":2,"path":"MessagePush/AlarmMessageReceive.md","ref":"MessagePush/AlarmMessageReceive.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"MessagePush/AlarmMessageReceive.md","mtime":"2019-09-11T09:52:15.077Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-11T09:53:08.051Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -417,10 +517,6 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
-        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
