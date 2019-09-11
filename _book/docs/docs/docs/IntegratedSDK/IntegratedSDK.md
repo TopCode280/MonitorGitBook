@@ -2,7 +2,7 @@
 
 #### 1.在Android Studio中创建你的工程
 
-#### 2.找相关工作人员获取 **<u>Cameralib.jar</u>**  + **<u>jniLibs ->armeabi-v7a</u>** ， 若缺少某一文件将出现不可预估的错误！
+#### 2.获取 **<u>Cameralib.jar</u>**  + **<u>jniLibs ->armeabi-v7a</u>** ，放入项目中。
 
 #### 3.build.gradle配置
 
@@ -41,5 +41,28 @@ app build.gradle
 }
 
 -keep class **JNI* {*;}
+```
+
+#### 5.权限配置
+
+``` xml
+   // 在AndroidManifest.xml中加入
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 ```
 
