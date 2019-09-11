@@ -362,7 +362,7 @@
                                 
                                 <h1 id="&#x96C6;&#x6210;sdk">&#x96C6;&#x6210;SDK</h1>
 <h4 id="1&#x5728;android-studio&#x4E2D;&#x521B;&#x5EFA;&#x4F60;&#x7684;&#x5DE5;&#x7A0B;">1.&#x5728;Android Studio&#x4E2D;&#x521B;&#x5EFA;&#x4F60;&#x7684;&#x5DE5;&#x7A0B;</h4>
-<h4 id="2&#x627E;&#x76F8;&#x5173;&#x5DE5;&#x4F5C;&#x4EBA;&#x5458;&#x83B7;&#x53D6;-cameralibjar---jnilibs--armeabi-v7a-&#xFF0C;-&#x82E5;&#x7F3A;&#x5C11;&#x67D0;&#x4E00;&#x6587;&#x4EF6;&#x5C06;&#x51FA;&#x73B0;&#x4E0D;&#x53EF;&#x9884;&#x4F30;&#x7684;&#x9519;&#x8BEF;&#xFF01;">2.&#x627E;&#x76F8;&#x5173;&#x5DE5;&#x4F5C;&#x4EBA;&#x5458;&#x83B7;&#x53D6; <strong><u>Cameralib.jar</u></strong>  + <strong><u>jniLibs -&gt;armeabi-v7a</u></strong> &#xFF0C; &#x82E5;&#x7F3A;&#x5C11;&#x67D0;&#x4E00;&#x6587;&#x4EF6;&#x5C06;&#x51FA;&#x73B0;&#x4E0D;&#x53EF;&#x9884;&#x4F30;&#x7684;&#x9519;&#x8BEF;&#xFF01;</h4>
+<h4 id="2&#x83B7;&#x53D6;-cameralibjar---jnilibs--armeabi-v7a-&#xFF0C;&#x653E;&#x5165;&#x9879;&#x76EE;&#x4E2D;&#x3002;">2.&#x83B7;&#x53D6; <strong><u>Cameralib.jar</u></strong>  + <strong><u>jniLibs -&gt;armeabi-v7a</u></strong> &#xFF0C;&#x653E;&#x5165;&#x9879;&#x76EE;&#x4E2D;&#x3002;</h4>
 <h4 id="3buildgradle&#x914D;&#x7F6E;">3.build.gradle&#x914D;&#x7F6E;</h4>
 <pre><code class="lang-java">app build.gradle
    defaultConfig {
@@ -392,6 +392,26 @@
 }
 
 -keep class **JNI* {*;}
+</code></pre>
+<h4 id="5&#x6743;&#x9650;&#x914D;&#x7F6E;">5.&#x6743;&#x9650;&#x914D;&#x7F6E;</h4>
+<pre><code class="lang-xml">   // &#x5728;AndroidManifest.xml&#x4E2D;&#x52A0;&#x5165;
+    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.ACCESS_WIFI_STATE&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.CHANGE_WIFI_STATE&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.INTERNET&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.RECORD_AUDIO&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.WAKE_LOCK&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.INTERNET&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.MODIFY_AUDIO_SETTINGS&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.ACCESS_NETWORK_STATE&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.WAKE_LOCK&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.PROCESS_OUTGOING_CALLS&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.CALL_PHONE&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.BOOT_COMPLETED&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.VIBRATE&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.CAMERA&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.ACCESS_COARSE_LOCATION&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">uses-permission</span> <span class="hljs-attr">android:name</span>=<span class="hljs-string">&quot;android.permission.ACCESS_FINE_LOCATION&quot;</span> /&gt;</span>
 </code></pre>
 
                                 
@@ -436,7 +456,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"集成SDK","level":"1.3","depth":1,"next":{"title":"Camera运行概述","level":"1.4","depth":1,"path":"CameraOperationOverview/CameraOperationOverview.md","ref":"CameraOperationOverview/CameraOperationOverview.md","articles":[]},"previous":{"title":"功能概述","level":"1.2","depth":1,"path":"FunctionalOverview/FunctionalOverview.md","ref":"FunctionalOverview/FunctionalOverview.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"IntegratedSDK/IntegratedSDK.md","mtime":"2019-09-04T07:51:23.219Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-10T10:10:03.420Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"集成SDK","level":"1.3","depth":1,"next":{"title":"Camera运行概述","level":"1.4","depth":1,"path":"CameraOperationOverview/CameraOperationOverview.md","ref":"CameraOperationOverview/CameraOperationOverview.md","articles":[]},"previous":{"title":"功能概述","level":"1.2","depth":1,"path":"FunctionalOverview/FunctionalOverview.md","ref":"FunctionalOverview/FunctionalOverview.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"IntegratedSDK/IntegratedSDK.md","mtime":"2019-09-11T01:21:28.292Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-11T01:22:55.492Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
