@@ -22,9 +22,9 @@
 
 | 参数       | 是否一定存在 | 类型   | 描述                              |
 | :--------- | :----------- | :----- | --------------------------------- |
-| deviceUid  | 是           | string | Device id                         |
+| deviceUid  | 是           | string | 设备ID                         |
 | msgType    | 是           | int    | 报警类型                          |
-| timeStamp  | 是           | long   | The UTC timestamp                 |
+| timeStamp  | 是           | long   | UTC时间戳                 |
 | imageName  | 是           | string | 报警图片文件名                    |
 | imageUrl   | 否           | string | 不推荐使用，始终为null            |
 | deviceName | 否           | string | 由camera.setDeviceAlias设置的别名 |
