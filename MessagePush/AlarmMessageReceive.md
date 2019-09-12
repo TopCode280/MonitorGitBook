@@ -18,17 +18,17 @@
 
 > POST
 
-###### request parameters
+###### 请求参数
 
-| parameter  | required | type   | comment                                            |
-| :--------- | :------- | :----- | -------------------------------------------------- |
-| deviceUid  | ture     | string | Device id                                          |
-| msgType    | true     | int    | Alarm type                                         |
-| timeStamp  | true     | long   | The UTC timestamp                                  |
-| imageName  | true     | string | Absolute  path of alarm picture on device sd card  |
-| imageUrl   | false    | string | Deprecated,always null                             |
-| deviceName | false    | string | The alias  which set by camera.setDeviceAlias      |
-| moduleName | true     | string | The alias of device or the name of external sensor |
+| 参数       | 是否一定存在 | 类型   | 描述                              |
+| :--------- | :----------- | :----- | --------------------------------- |
+| deviceUid  | 是           | string | Device id                         |
+| msgType    | 是           | int    | 报警类型                          |
+| timeStamp  | 是           | long   | The UTC timestamp                 |
+| imageName  | 是           | string | 报警图片文件名                    |
+| imageUrl   | 否           | string | 不推荐使用，始终为null            |
+| deviceName | 否           | string | 由camera.setDeviceAlias设置的别名 |
+| moduleName | 是           | string | 设备的别名或外部传感器的名称      |
 
 ##### 1. 如果 camera.setPhpSever("http://msg.khjdevice.com:5656"),那么警报消息将发布到 "http://msg.khjdevice.com:5656/pushMsg"
 

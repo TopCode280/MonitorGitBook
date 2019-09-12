@@ -111,8 +111,8 @@ private void startReceiceVideo() {
 
 ###### 5.视频清晰度切换
 
-```
-  // VIDEO_QUALITY 分为5个档次，分别为 1 - 5,数字越小清晰度越低。VIDEO_QUALITY = 1 高清码流在800K上下，VIDEO_QUALITY = 3 标清码流在300K上下,VIDEO_QUALITY = 5 流畅码流在100K上下。（注：若网络情况较差,但却开到最高清晰度会发生丢帧的情况，视图表现为黑屏。）
+```java
+  // VIDEO_QUALITY 分为5个档次，分别为 1 - 5,数值越小，清晰度越高。VIDEO_QUALITY = 1 高清码流在800K上下，VIDEO_QUALITY = 3 标清码流在300K上下,VIDEO_QUALITY = 5 流畅码流在100K上下。（注：若网络情况较差,但却开到最高清晰度会发生丢帧的情况，视图表现为黑屏。）
   mCamera.setQuality(int VIDEO_QUALITY, b -> {
       if(b){
            Log.i("khj","Change Video Dpi Success")
