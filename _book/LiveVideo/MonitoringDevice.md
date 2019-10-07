@@ -1,4 +1,4 @@
-# 监听设备
+# 监听设备 (Monitoring device)
 
 ###### 1.初始化 AudioTrack 
 
@@ -6,9 +6,9 @@
   int size = AudioTrack.getMinBufferSize(8000,
                 AudioFormat.CHANNEL_OUT_MONO,
                 AudioFormat.ENCODING_PCM_16BIT);
-        mAudioTrack = new AudioTrack(AudioManager.STREAM_MUSIC, // 指定在流的类型
-                8000, AudioFormat.CHANNEL_OUT_MONO,// 设置输出声道为双声道立体声
-                AudioFormat.ENCODING_PCM_16BIT,// 设置音频数据块是8位还是16位
+        mAudioTrack = new AudioTrack(AudioManager.STREAM_MUSIC, // 指定在流的类型 (Specify the type of stream)
+                8000, AudioFormat.CHANNEL_OUT_MONO,// 设置输出声道为双声道立体声 (Set the output channel to two-channel stereo)
+                AudioFormat.ENCODING_PCM_16BIT,// 设置音频数据块是8位还是16位 (Set whether the audio data block is 8 or 16 bits)
                 size, AudioTrack.MODE_STREAM);
 ```
 
