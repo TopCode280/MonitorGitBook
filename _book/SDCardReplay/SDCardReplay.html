@@ -393,11 +393,83 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="sd&#x5361;&#x56DE;&#x653E;-sdcard-replay">SD&#x5361;&#x56DE;&#x653E; (SDCard Replay)</h1>
-<p>SD&#x5361;&#x56DE;&#x653E;&#x6D41;&#x7A0B; (SD card playback process)</p>
-<p>1.&#x4F20;&#x5165;&#x5F53;&#x524D;&#x96F6;&#x70B9;&#x96F6;&#x5206;&#x7684;&#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x83B7;&#x53D6;SD&#x4E2D;&#x7684;&#x89C6;&#x9891;&#x6587;&#x4EF6;&#x5217;&#x8868;</p>
-<p>2.&#x64AD;&#x653E;&#x65F6;&#x67E5;&#x627E;&#x89C6;&#x9891;&#x64AD;&#x653E;&#x65F6;&#x95F4; <code>videofiletime</code> &#x5BF9;&#x5E94;&#x7684;&#x89C6;&#x9891;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x64AD;&#x653E;</p>
-<p>1.Pass in the current time stamp of zero minutes to get the list of video files in SD</p>
-<p>2.Find the video playback time <code>videofiletime</code> during playback</p>
+<p>&#x6444;&#x50CF;&#x5934;&#x4F1A;&#x6839;&#x636E;&#x8BBE;&#x7F6E;&#x7684;&#x65F6;&#x533A;&#xFF0C;&#x5728;&#x6BCF;&#x5929;&#x7684;0&#x70B9;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x4FDD;&#x5B58;&#x5F53;&#x5929;&#x5F55;&#x5236;&#x7684;&#x6240;&#x6709;&#x89C6;&#x9891;&#x3002;</p>
+<p>(The camera will generate a folder in the SDcard at 0 o&apos;clock every day according to the set time zone to save all videos recorded on the day)</p>
+<p>&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x65B9;&#x6CD5;&#xFF0C;&#x4F20;&#x5165;&#x67D0;&#x5929;0&#x70B9;&#xFF0C;&#x4EE5;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#x7684;&#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x4F1A;&#x8FD4;&#x56DE;&#x5F53;&#x5929;&#x6240;&#x6709;&#x5F55;&#x5236;&#x89C6;&#x9891;&#x7684;&#x96C6;&#x5408;&#x3002;</p>
+<p>(Using the following method, passing in a day&apos;s time at 0 o&apos;clock, a timestamp in seconds will return a collection of all recorded videos for that day.)</p>
+<blockquote>
+<p>Camera.getVideoFiletime(long timeStart, Camera.getVideFileTimeCallback callback)</p>
+</blockquote>
+<pre><code class="lang-java"><span class="hljs-comment">/*
+* &#x67E5;&#x8BE2;&#x89C6;&#x9891;&#x6587;&#x4EF6;&#x5217;&#x8868;&#x56DE;&#x8C03;&#x63A5;&#x53E3; (Query video file list callback interface)
+* ret  &#x7B49;&#x4E8E;0&#x65F6;&#x67E5;&#x8BE2;&#x6210;&#x529F;&#xFF0C;1&#x65F6; SD&#x5361;&#x4E0D;&#x53EF;&#x7528;&#xFF0C;&#x5176;&#x5B83;&#x67E5;&#x8BE2;&#x51FA;&#x9519; ( ret= 0 means success, the SD card is unavailable at 1 and other value are incorrect.)
+* var2  &#x6587;&#x4EF6;&#x96C6;&#x5408;List (List of files)
+* */</span>  
+
+ <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">getVideFileTimeCallback</span> </span>{
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">getVideoTiletime</span><span class="hljs-params">(<span class="hljs-keyword">int</span> ret, ArrayList&lt;Camera.fileTimeInfo&gt; var2)</span></span>;
+ }    
+
+<span class="hljs-comment">/*
+* &#x89C6;&#x9891;&#x6587;&#x4EF6;&#x4FE1;&#x606F;Bean (Video File Information Bean)
+* videofiletime  &#x89C6;&#x9891;&#x5F00;&#x59CB;&#x65F6;&#x95F4; (Video start time)
+* playbackTotalTime  &#x89C6;&#x9891;&#x65F6;&#x957F; (Video duration)
+* */</span> 
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">fileTimeInfo</span> </span>{
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">long</span> videofiletime;
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> playbackTotalTime;
+
+        <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">fileTimeInfo</span><span class="hljs-params">(<span class="hljs-keyword">long</span> a, <span class="hljs-keyword">int</span> b)</span> </span>{
+            <span class="hljs-keyword">this</span>.videofiletime = a;
+            <span class="hljs-keyword">this</span>.playbackTotalTime = b;
+        }
+}
+</code></pre>
+<p>&#x6839;&#x636E;&#x8FD4;&#x56DE;&#x7684;&#x6587;&#x4EF6;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x51FA;&#x89C6;&#x9891;&#x6587;&#x4EF6;&#x540D;&#x79F0;&#x3002;SD&#x5361;&#x4E0A;&#x7684;&#x89C6;&#x9891;&#x6587;&#x4EF6;&#x547D;&#x540D;&#x89C4;&#x5219;&#xFF0C;&#x662F;&#x5C06;&#x89C6;&#x9891;&#x6587;&#x4EF6;&#x7684;&#x8D77;&#x59CB;&#x65F6;&#x95F4;&#x683C;&#x5F0F;&#x5316;&#x540E;&#x52A0;&#x4E0A;.mp4&#x540E;&#x7F00;</p>
+<p>(Based on the returned file information, the video file name can be calculated. The video file naming rule on the SD card is to format the start time of the video file and add the .mp4 suffix)</p>
+<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">getDateTime2</span><span class="hljs-params">(<span class="hljs-keyword">long</span> currentTime)</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> SimpleDateFormat(<span class="hljs-string">&quot;yyyy_MM_dd_HH_mm_ss&quot;</span>).format(currentTime);
+    }
+
+ String fileName = DateUtils.getDateTime2(fileTimeInfo.videofiletime * <span class="hljs-number">1000</span>) + <span class="hljs-string">&quot;.mp4&quot;</span>;
+</code></pre>
+<p>&#x9700;&#x8981;&#x64AD;&#x653E;&#x67D0;&#x4E00;&#x65F6;&#x523B;&#x7684;&#x89C6;&#x9891;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x9996;&#x5148;&#x83B7;&#x53D6;&#x5F53;&#x5929;&#x7684;&#x6240;&#x6709;&#x89C6;&#x9891;&#x6587;&#x4EF6;&#x4FE1;&#x606F;&#xFF0C;&#x8BA1;&#x7B97;&#x51FA;&#x9700;&#x8981;&#x64AD;&#x653E;&#x7684;&#x65F6;&#x5019;&#x5C5E;&#x4E8E;&#x54EA;&#x4E00;&#x4E2A;&#x89C6;&#x9891;&#x6587;&#x4EF6;&#xFF0C;&#x5E76;&#x6839;&#x636E;&#x89C6;&#x9891;&#x6587;&#x4EF6;&#x7684;&#x8D77;&#x59CB;&#x65F6;&#x95F4;&#x8BA1;&#x7B97;&#x51FA;&#x64AD;&#x653E;&#x89C6;&#x9891;&#x7684;&#x504F;&#x79FB;&#x91CF;&#x3002;</p>
+<p>(When you need to play a video at a certain time, you must first obtain all video file information for the day, calculate which video file belongs to when you need to play, and calculate the offset of the played video based on the start time of the video file.)</p>
+<pre><code class="lang-java"><span class="hljs-comment">/*
+* &#x5F00;&#x59CB;&#x64AD;&#x653E;&#x89C6;&#x9891; (Start playing video)
+* fileName  &#x67E5;&#x8BE2;&#x51FA;&#x7684;&#x89C6;&#x9891;&#x6587;&#x4EF6;&#x540D; (the video file name)
+* offset  &#x504F;&#x79FB;&#x65F6;&#x95F4; = &#x9700;&#x8981;&#x64AD;&#x653E;&#x65F6;&#x95F4; - videofiletime (Offset time = playback time required - videofiletime)
+* playBackVideoCallback &#x89C6;&#x9891;&#x6D41;&#x56DE;&#x8C03; (Video stream callback)
+* recvAudioCallback &#x97F3;&#x9891;&#x6D41;&#x56DE;&#x8C03; (Audio stream callback)
+* */</span> 
+
+Camera.playBackVideoStart(String file, <span class="hljs-keyword">int</span> m, Camera.playBackVideoCallback callback, Camera.recvAudioCallback callback1)
+
+
+<span class="hljs-comment">/*
+* &#x89C6;&#x9891;&#x6D41;&#x56DE;&#x8C03;  &#xFF08;Video stream callback&#xFF09;
+* var1  &#x7B49;&#x4E8E;0&#x6210;&#x529F;&#xFF0C;&#x5176;&#x5B83;&#x51FA;&#x9519; &#xFF08;Equal to 0 success, other errors&#xFF09;
+* var2  &#x4E8C;&#x8FDB;&#x5236;&#x89C6;&#x9891;&#x6D41;&#x6570;&#x7EC4; &#xFF08;Binary video stream array&#xFF09;
+* var3  &#x89C6;&#x9891;&#x5173;&#x952E;&#x5E27;&#x603B;&#x6570; &#xFF08;Total number of video key frames&#xFF09;
+* var5  &#x5F53;&#x524D;&#x5173;&#x952E;&#x5E27; &#xFF08;Current keyframe&#xFF09;
+* var7  &#x5DF2;&#x5E9F;&#x5F03;&#x4E0D;&#x505A;&#x5904;&#x7406;&#xFF01;&#xFF08;Discarded and not disposed of!&#xFF09;
+* */</span>    
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">playBackVideoCallback</span> </span>{
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">playBackVideo</span><span class="hljs-params">(<span class="hljs-keyword">int</span> var1, <span class="hljs-keyword">byte</span>[] var2, <span class="hljs-keyword">long</span> var3, <span class="hljs-keyword">long</span> var5, <span class="hljs-keyword">boolean</span> var7)</span></span>;
+}   
+
+<span class="hljs-comment">/*
+* &#x97F3;&#x9891;&#x6D41;&#x56DE;&#x8C03; &#xFF08;Audio stream callback&#xFF09;
+* var1  &#x4E8C;&#x8FDB;&#x5236;&#x97F3;&#x9891;&#x6D41;&#x6570;&#x7EC4; &#xFF08;Binary audio stream array&#xFF09;
+* var2  &#x5DF2;&#x5E9F;&#x5F03;&#x4E0D;&#x505A;&#x5904;&#x7406;&#xFF01;&#xFF08;Discarded and not disposed of!&#xFF09;
+* */</span>  
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">recvAudioCallback</span> </span>{
+        <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">recvAudio</span><span class="hljs-params">(<span class="hljs-keyword">byte</span>[] var1, <span class="hljs-keyword">long</span> var2)</span></span>;
+}
+</code></pre>
 
                                 
                                 </section>
@@ -441,7 +513,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SD卡回放 (SDCard Replay)","level":"1.8","depth":1,"next":{"title":"API使用接口说明 (API use interface description)","level":"1.8.1","depth":2,"path":"SDCardReplay/APIInterfaceDescription.md","ref":"SDCardReplay/APIInterfaceDescription.md","articles":[]},"previous":{"title":"报警侦测消息接收 (Alarm detection message reception)","level":"1.7.1","depth":2,"path":"MessagePush/AlarmMessageReceive.md","ref":"MessagePush/AlarmMessageReceive.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"SDCardReplay/SDCardReplay.md","mtime":"2019-12-13T09:10:52.995Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-13T09:11:38.087Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SD卡回放 (SDCard Replay)","level":"1.8","depth":1,"next":{"title":"API使用接口说明 (API use interface description)","level":"1.8.1","depth":2,"path":"SDCardReplay/APIInterfaceDescription.md","ref":"SDCardReplay/APIInterfaceDescription.md","articles":[]},"previous":{"title":"报警侦测消息接收 (Alarm detection message reception)","level":"1.7.1","depth":2,"path":"MessagePush/AlarmMessageReceive.md","ref":"MessagePush/AlarmMessageReceive.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"SDCardReplay/SDCardReplay.md","mtime":"2019-12-14T01:59:42.385Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-14T02:01:51.995Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

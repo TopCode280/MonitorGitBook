@@ -1,0 +1,552 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>报警侦测消息接收 (Alarm detection message reception) · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="MessagePush.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言 (Foreword)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../FunctionalOverview/FunctionalOverview.html">
+            
+                <a href="../FunctionalOverview/FunctionalOverview.html">
+            
+                    
+                    功能概述 (Functional Overview)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../IntegratedSDK/IntegratedSDK.html">
+            
+                <a href="../IntegratedSDK/IntegratedSDK.html">
+            
+                    
+                    集成SDK (Integrated SDK)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../CameraOperationOverview/CameraOperationOverview.html">
+            
+                <a href="../CameraOperationOverview/CameraOperationOverview.html">
+            
+                    
+                    Camera运行概述 (Camera operation overview)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../DeviceSettingNetWork/DeviceSettingNetWork.html">
+            
+                <a href="../DeviceSettingNetWork/DeviceSettingNetWork.html">
+            
+                    
+                    设备配网 (Equipment distribution network)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../DeviceSettingNetWork/QrCodeConnection.html">
+            
+                <a href="../DeviceSettingNetWork/QrCodeConnection.html">
+            
+                    
+                    二维码配网 (QR Code distribution network)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../DeviceSettingNetWork/ApModeConnection.html">
+            
+                <a href="../DeviceSettingNetWork/ApModeConnection.html">
+            
+                    
+                    AP模式配网 (AP mode distribution network)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../LiveVideo/">
+            
+                <a href="../LiveVideo/">
+            
+                    
+                    视频直播及设置 (Live video and settings)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../LiveVideo/PlayLiveVideo.html">
+            
+                <a href="../LiveVideo/PlayLiveVideo.html">
+            
+                    
+                    直播视频播放 (Live video playback)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../LiveVideo/SendAudio.html">
+            
+                <a href="../LiveVideo/SendAudio.html">
+            
+                    
+                    发送语音 (Send voice)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../LiveVideo/CaptureScreenshot.html">
+            
+                <a href="../LiveVideo/CaptureScreenshot.html">
+            
+                    
+                    抓拍截图 (Capture screenshot)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../LiveVideo/MonitoringDevice.html">
+            
+                <a href="../LiveVideo/MonitoringDevice.html">
+            
+                    
+                    监听设备 (Monitoring device)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../LiveVideo/RecordingVideo.html">
+            
+                <a href="../LiveVideo/RecordingVideo.html">
+            
+                    
+                    录制视频 (Recording video)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../LiveVideo/DeviceSetting.html">
+            
+                <a href="../LiveVideo/DeviceSetting.html">
+            
+                    
+                    设备设置 (Device settings)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="MessagePush.html">
+            
+                <a href="MessagePush.html">
+            
+                    
+                    消息推送 (Message push)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.7.1" data-path="AlarmMessageReceive.html">
+            
+                <a href="AlarmMessageReceive.html">
+            
+                    
+                    报警侦测消息接收 (Alarm detection message reception)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >报警侦测消息接收 (Alarm detection message reception)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x62A5;&#x8B66;&#x4FA6;&#x6D4B;&#x6D88;&#x606F;&#x63A5;&#x6536;-alarm-detection-message-reception">&#x62A5;&#x8B66;&#x4FA6;&#x6D4B;&#x6D88;&#x606F;&#x63A5;&#x6536; (Alarm detection message reception)</h1>
+<p><strong>1. &#x4E0A;&#x4F20;&#x62A5;&#x8B66;&#x6D88;&#x606F; (Upload alarm message)</strong></p>
+<h6 id="&#x670D;&#x52A1;&#x5668;&#x63A5;&#x53E3;&#x51FD;&#x6570;-server-interface-function">&#x670D;&#x52A1;&#x5668;&#x63A5;&#x53E3;&#x51FD;&#x6570; (Server interface function)</h6>
+<blockquote>
+<p>&#x63A5;&#x6536;&#x62A5;&#x8B66;&#x6D88;&#x606F; (Receive alarm message)</p>
+</blockquote>
+<h6 id="url">URL</h6>
+<blockquote>
+<p>/pushMsg</p>
+</blockquote>
+<p>&#x7F16;&#x7801;&#x683C;&#x5F0F; (Encoding format)</p>
+<blockquote>
+<p>application/x-www-form-urlencoded</p>
+</blockquote>
+<h6 id="http-&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;-&#xFF08;http-request-method&#xFF09;">HTTP &#x8BF7;&#x6C42;&#x65B9;&#x5F0F; &#xFF08;HTTP request method&#xFF09;</h6>
+<blockquote>
+<p>POST</p>
+</blockquote>
+<h6 id="&#x8BF7;&#x6C42;&#x53C2;&#x6570;-&#xFF08;request-parameter&#xFF09;">&#x8BF7;&#x6C42;&#x53C2;&#x6570; &#xFF08;Request parameter&#xFF09;</h6>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x53C2;&#x6570;(Parameter)</th>
+<th style="text-align:left">&#x662F;&#x5426;&#x4E00;&#x5B9A;&#x5B58;&#x5728; (Whether it must exist)</th>
+<th style="text-align:left">&#x7C7B;&#x578B; (Types of)</th>
+<th>&#x63CF;&#x8FF0; (Description)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">deviceUid</td>
+<td style="text-align:left">&#x662F; &#xFF08;Yes&#xFF09;</td>
+<td style="text-align:left">string</td>
+<td>&#x8BBE;&#x5907;ID (Device ID)</td>
+</tr>
+<tr>
+<td style="text-align:left">msgType</td>
+<td style="text-align:left">&#x662F;&#xFF08;Yes&#xFF09;</td>
+<td style="text-align:left">int</td>
+<td>&#x62A5;&#x8B66;&#x7C7B;&#x578B; (Alarm type)</td>
+</tr>
+<tr>
+<td style="text-align:left">timeStamp</td>
+<td style="text-align:left">&#x662F;&#xFF08;Yes&#xFF09;</td>
+<td style="text-align:left">long</td>
+<td>UTC&#x65F6;&#x95F4;&#x6233; (UTC timestamp)</td>
+</tr>
+<tr>
+<td style="text-align:left">imageName</td>
+<td style="text-align:left">&#x662F;&#xFF08;Yes&#xFF09;</td>
+<td style="text-align:left">string</td>
+<td>&#x62A5;&#x8B66;&#x56FE;&#x7247;&#x6587;&#x4EF6;&#x540D; (Alarm picture file name)</td>
+</tr>
+<tr>
+<td style="text-align:left">imageUrl</td>
+<td style="text-align:left">&#x5426;&#xFF08;No&#xFF09;</td>
+<td style="text-align:left">string</td>
+<td>&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#xFF0C;&#x59CB;&#x7EC8;&#x4E3A;null (Not recommended, always null)</td>
+</tr>
+<tr>
+<td style="text-align:left">deviceName</td>
+<td style="text-align:left">&#x5426;&#xFF08;No&#xFF09;</td>
+<td style="text-align:left">string</td>
+<td>&#x7531;camera.setDeviceAlias&#x8BBE;&#x7F6E;&#x7684;&#x522B;&#x540D; (Alias set by camera.setDeviceAlias)</td>
+</tr>
+<tr>
+<td style="text-align:left">moduleName</td>
+<td style="text-align:left">&#x662F;&#xFF08;Yes&#xFF09;</td>
+<td style="text-align:left">string</td>
+<td>&#x8BBE;&#x5907;&#x7684;&#x522B;&#x540D;&#x6216;&#x5916;&#x90E8;&#x4F20;&#x611F;&#x5668;&#x7684;&#x540D;&#x79F0; (The alias of the device or the name of the external sensor)</td>
+</tr>
+</tbody>
+</table>
+<h5 id="1-&#x5982;&#x679C;-camerasetphpseverhttpmsgkhjdevicecom5656&#x90A3;&#x4E48;&#x8B66;&#x62A5;&#x6D88;&#x606F;&#x5C06;&#x53D1;&#x5E03;&#x5230;-httpmsgkhjdevicecom5656pushmsg-if-camerasetphpseverhttpmsgkhjdevicecom5656-then-the-alert-message-will-be-posted-to-httpmsgkhjdevicecom5656pushmsg">1. &#x5982;&#x679C; camera.setPhpSever(&quot;<a href="http://msg.khjdevice.com:5656&quot;),&#x90A3;&#x4E48;&#x8B66;&#x62A5;&#x6D88;&#x606F;&#x5C06;&#x53D1;&#x5E03;&#x5230;" target="_blank">http://msg.khjdevice.com:5656&quot;),&#x90A3;&#x4E48;&#x8B66;&#x62A5;&#x6D88;&#x606F;&#x5C06;&#x53D1;&#x5E03;&#x5230;</a> &quot;<a href="http://msg.khjdevice.com:5656/pushMsg" target="_blank">http://msg.khjdevice.com:5656/pushMsg</a>&quot; (If camera.setPhpSever(&quot;<a href="http://msg.khjdevice.com:5656" target="_blank">http://msg.khjdevice.com:5656</a>&quot;) then the alert message will be posted to &quot;<a href="http://msg.khjdevice.com:5656/pushMsg" target="_blank">http://msg.khjdevice.com:5656/pushMsg</a>&quot;)</h5>
+<h5 id="2-&#x5728;&#x65E7;&#x7684;&#x56FA;&#x4EF6;&#x7248;&#x672C;&#x4E2D;&#xFF0C;devicename&#x548C;modulename&#x53EF;&#x80FD;&#x4E3A;null&#xFF0C;&#x4F46;&#x5728;&#x5C06;&#x6765;&#x7684;&#x53D1;&#x884C;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x786E;&#x4FDD;&#x8BBE;&#x5907;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x6B63;&#x786E;&#xFF01;in-the-old-firmware-version-devicename-and-modulename-may-be-null-but-in-future-releases-we-will-ensure-that-the-device-passes-the-parameters-correctly-">2. &#x5728;&#x65E7;&#x7684;&#x56FA;&#x4EF6;&#x7248;&#x672C;&#x4E2D;&#xFF0C;deviceName&#x548C;moduleName&#x53EF;&#x80FD;&#x4E3A;null&#xFF0C;&#x4F46;&#x5728;&#x5C06;&#x6765;&#x7684;&#x53D1;&#x884C;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x786E;&#x4FDD;&#x8BBE;&#x5907;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x6B63;&#x786E;&#xFF01;(In the old firmware version, deviceName and moduleName may be null, but in future releases, we will ensure that the device passes the parameters correctly )</h5>
+<h5 id="3&#x5173;&#x4E8E;msgtype&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x6444;&#x50CF;&#x673A;&#x652F;&#x6301;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x8B66;&#x62A5;&#x3002;&#xFF08;regarding-msgtype-different-cameras-support-different-types-of-alerts&#xFF09;">3.&#x5173;&#x4E8E;msgType&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x6444;&#x50CF;&#x673A;&#x652F;&#x6301;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x8B66;&#x62A5;&#x3002;&#xFF08;Regarding msgType, different cameras support different types of alerts.&#xFF09;</h5>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x6D88;&#x606F;&#x7C7B;&#x578B;(msgType)</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;(comment)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:left">motion detection</td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:left">sound detection</td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:left">face detection</td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left">Human detection</td>
+</tr>
+<tr>
+<td style="text-align:left">greater than 255</td>
+<td style="text-align:left">external sensor detection</td>
+</tr>
+</tbody>
+</table>
+<h6 id="&#x8FD4;&#x56DE;-return">&#x8FD4;&#x56DE; (return)</h6>
+<blockquote>
+<p>Camera&#x5FFD;&#x7565;&#x6765;&#x81EA;&#x670D;&#x52A1;&#x5668;&#x7684;&#x8FD4;&#x56DE; (Camera ignores the return from the server)</p>
+</blockquote>
+<p>APP&#x5EFA;&#x8BAE;&#x96C6;&#x6210;&#x53CB;&#x76DF;&#x63A8;&#x9001;&#xFF0C;&#x70B9;&#x51FB;&#x4E0B;&#x65B9;&#x94FE;&#x63A5;&#x5FEB;&#x901F;&#x96C6;&#x6210; (APP recommends integration with Union Push, click on the link below to quickly integrate)</p>
+<p><a href="https://developer.umeng.com/docs/119267/cate/118577" target="_blank">https://developer.umeng.com/docs/119267/cate/118577</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="MessagePush.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 消息推送 (Message push)">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"报警侦测消息接收 (Alarm detection message reception)","level":"1.7.1","depth":2,"previous":{"title":"消息推送 (Message push)","level":"1.7","depth":1,"path":"MessagePush/MessagePush.md","ref":"MessagePush/MessagePush.md","articles":[{"title":"报警侦测消息接收 (Alarm detection message reception)","level":"1.7.1","depth":2,"path":"MessagePush/AlarmMessageReceive.md","ref":"MessagePush/AlarmMessageReceive.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"MessagePush/AlarmMessageReceive.md","mtime":"2019-10-07T06:02:21.786Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-10-07T06:53:51.292Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
