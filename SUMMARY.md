@@ -1,12 +1,27 @@
 # Summary
 
 * [前言 (Foreword)](README.md)
+
+---
+
 * [功能概述 (Functional Overview)](FunctionalOverview/FunctionalOverview.md)
+
+---
+
 * [集成SDK (Integrated SDK)](IntegratedSDK/IntegratedSDK.md)
+
+---
+
 * [Camera运行概述 (Camera operation overview)](CameraOperationOverview/CameraOperationOverview.md)
+
+---
+
 * [设备配网 (Equipment distribution network)](DeviceSettingNetWork/DeviceSettingNetWork.md)
     * [二维码配网 (QR Code distribution network)](DeviceSettingNetWork/QrCodeConnection.md)
     * [AP模式配网 (AP mode distribution network)](DeviceSettingNetWork/ApModeConnection.md)
+
+---	
+	
 * [视频直播及设置 (Live video and settings)](LiveVideo/README.md)
     * [直播视频播放 (Live video playback)](LiveVideo/PlayLiveVideo.md)
     * [发送语音 (Send voice)](LiveVideo/SendAudio.md)
@@ -14,8 +29,16 @@
     * [监听设备 (Monitoring device)](LiveVideo/MonitoringDevice.md)
     * [录制视频 (Recording video)](LiveVideo/RecordingVideo.md)
     * [设备设置 (Device settings)](LiveVideo/DeviceSetting.md)
+	* [设备信息 (Device Info)](LiveVideo/DeviceInfo.md)
+	
+---	
+
 * [消息推送 (Message push)](MessagePush/MessagePush.md)
     * [报警侦测消息接收 (Alarm detection message reception)](MessagePush/AlarmMessageReceive.md)
+	
+---	
+
 * [SD卡回放 (SDCard Replay)](SDCardReplay/SDCardReplay.md)
     * [API使用接口说明 (API use interface description)](SDCardReplay/APIInterfaceDescription.md)
-
+	
+---
