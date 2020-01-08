@@ -16,6 +16,10 @@
 
 ---
 
+* [初始化Camera (Camera Init)](CameraInit/CameraInit.md)
+
+---
+
 * [设备配网 (Equipment distribution network)](DeviceSettingNetWork/DeviceSettingNetWork.md)
     * [二维码配网 (QR Code distribution network)](DeviceSettingNetWork/QrCodeConnection.md)
     * [AP模式配网 (AP mode distribution network)](DeviceSettingNetWork/ApModeConnection.md)

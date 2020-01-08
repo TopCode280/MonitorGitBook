@@ -1,6 +1,6 @@
 # 设备设置 (Device settings)
 
-##### 1.设备云台转动  Equipment pan/tilt
+##### 设备云台转动  Equipment pan/tilt
 
 ```java
 //云台转动 参数1方向，参数2一次转动多少步  rotate the camera
@@ -10,23 +10,7 @@ mCamera.setPtz(AVIOCTRL_PTZ_UP, 30);
 mCamera.setPtz(AVIOCTRL_PTZ_DOWN, 30);
 ```
 
-##### 2.获取设备信息  Get device information
-
-```java
-//获取设备信息 get the camera device information
-// sdcardTotal SD卡总容量/MB
-// sdcardFree  SD卡剩余容量/MB
-// v2 v3 v4    固件版本
-// fileSystem  SD卡文件系统格式，建议检测是否为"exfat",若不是则提示格式化SD卡,避免SD卡录像出现的断录等问题
-mCamera.queryDeviceInfo(new Camera.deviceInfoCallback() {
-                            @Override
-                            public void deviceInfo(int sdcardTotal, int sdcardFree, byte v1, byte v2, byte v3, byte v4, String model, String vendor) {
-                                String version = builder.append(v2).append(".").append(v3).append(".").append(v4).toString();//固件版本
-                            }
-                        });
-```
-
-##### 3.网络设置  Network settings
+##### 网络设置  Network settings
 
 ```java
  //设备周围wifi信号
@@ -43,7 +27,7 @@ mCamera.queryDeviceInfo(new Camera.deviceInfoCallback() {
      });
 ```
 
-##### 4.画面翻转  Screen flip
+##### 画面翻转  Screen flip
 
 ```java
  mCamera.getFlipping(new Camera.successCallback() {
@@ -61,7 +45,7 @@ mCamera.queryDeviceInfo(new Camera.deviceInfoCallback() {
 });
 ```
 
-##### 5.录像设置  Recording settings
+##### 录像设置  Recording settings
 
 ```java
  //查询当前sd录像的模式 (Query the mode of the current sd video)
@@ -114,7 +98,7 @@ mCamera.addTimedCameraTask("", new Camera.successCallback() {
                });
 ```
 
-##### 7.设备音量设置  Device volume setting
+##### 设备音量设置  Device volume setting
 
 ``` java
 //声音设置 设备音量大小0-100  get camera sound volume
@@ -131,7 +115,7 @@ mCamera.addTimedCameraTask("", new Camera.successCallback() {
               });
 ```
 
-##### 8.设置时区  Set time zone
+##### 设置时区  Set time zone
 
 ```java
  //设置时区set the timezone
@@ -146,7 +130,7 @@ mCamera.addTimedCameraTask("", new Camera.successCallback() {
                 });
 ```
 
-##### 9.移动侦测和声音报警侦测  motion detection and sound detection
+##### 移动侦测和声音报警侦测  motion detection and sound detection
 
 ```java
                       //查询移动侦测的开关状态 Query the switch status of motion detection
@@ -205,7 +189,7 @@ mCamera.addTimedCameraTask("", new Camera.successCallback() {
                         });
 ```
 
-##### 10.格式化SD卡 Format SD card
+##### 格式化SD卡 Format SD card
 
 ```java
 // 谨慎操作 Exercise cautiously
@@ -217,7 +201,7 @@ mCamera.formatSdcard(new Camera.successCallbackI() {
                    });
 ```
 
-##### 11.设备注册广播回调  Device Broadcast
+##### 设备注册广播回调  Device Broadcast
 
 ```java
  /**
@@ -247,7 +231,7 @@ mCamera.formatSdcard(new Camera.successCallbackI() {
                         });
 ```
 
-##### 12.搜索局域网设备 Search for LAN devices
+##### 搜索局域网设备 Search for LAN devices
 
 ```java
  /**
@@ -274,7 +258,7 @@ mCamera.formatSdcard(new Camera.successCallbackI() {
                         });
 ```
 
-##### 13.设置设备推送消息的实际地址  Set the actual address of the device push message
+##### 设置设备推送消息的实际地址  Set the actual address of the device push message
 
 ```java
 /**
@@ -306,7 +290,7 @@ mCamera.formatSdcard(new Camera.successCallbackI() {
                         });
 ```
 
-##### 14.播放录制的视频文件  Play recorded video files
+##### 播放录制的视频文件  Play recorded video files
 
 ``` java
   //参数二是播放的初始偏移量，毫秒单位 (Parameter two is the initial offset of the playback, in milliseconds)
@@ -323,7 +307,7 @@ mCamera.formatSdcard(new Camera.successCallbackI() {
                         });
 ```
 
-##### 15.查询SD中的图片  Query images in SD
+##### 查询SD中的图片  Query images in SD
 
 ``` java
  /**
@@ -352,7 +336,7 @@ mCamera.formatSdcard(new Camera.successCallbackI() {
 
 ```
 
-##### 16.查询SD中的视频   Query the video in SD
+##### 查询SD中的视频   Query the video in SD
 
 ```java
   long date2 = date2Long("2018-05-10", "yyyy-MM-dd") / 1000;//传入某一天日期的时间戳，单位需要转换为秒 (Pass in the timestamp of the date of a certain day, the unit needs to be converted to seconds)
@@ -368,7 +352,7 @@ mCamera.formatSdcard(new Camera.successCallbackI() {
             });
 ```
 
-##### 17.下载SD卡中的文件(图片,视频...)   Download the files in the SD card
+##### 下载SD卡中的文件(图片,视频...)   Download the files in the SD card
 
 ```java
  /**
