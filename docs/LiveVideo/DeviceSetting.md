@@ -397,3 +397,26 @@ mCamera.formatSdcard(new Camera.successCallbackI() {
 
 ```
 
+##### 设备布防和撤防
+
+设置布防状态, Camera.sendCommonBuffer 7 第二个字符串参数设置为0表示撤防，设置为1表示布防
+
+```java
+Camera.sendCommonBuffer((byte) 7,"0", (i, b, s) -> { // 设置0表示撤防
+    if(s.equals("OK")){
+        Log.i( set success)
+    }else{
+        Log.i( set failure)
+    }
+      })
+```
+
+##### 查询设备的防御状态
+
+```java
+Camera.sendCommonBuffer((byte) 6, "", (i, b, s) -> {   
+if (!TextUtils.isEmpty(s)) {         
+    int defenceStatus =  Integer.parseInt(s);  // 如果 defenceStatus == 0 表示当前设备为撤防状态，defenceStatus == 1 则为布防状态      
+   }
+});
+```
