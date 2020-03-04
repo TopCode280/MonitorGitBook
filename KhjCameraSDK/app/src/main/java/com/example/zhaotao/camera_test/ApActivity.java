@@ -70,12 +70,7 @@ public class ApActivity extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                         } else {
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    Toast.makeText(ApActivity.this, "手动连接到设备热点", Toast.LENGTH_SHORT).show();
-                                }
-                            });
+                            handler.post(() -> Toast.makeText(ApActivity.this, "手动连接到设备热点", Toast.LENGTH_SHORT).show());
                         }
                     }
                 }).start();
