@@ -38,3 +38,11 @@
 * [SD卡回放 (SDCard Replay)](SDCardReplay/SDCardReplay.md)
     * [API使用接口说明 (API use interface description)](SDCardReplay/APIInterfaceDescription.md)
 
+-----
+* [统一回调接口 (Unified Callback Interface)](UnifiedCallbackInterface/UnifiedCallbackInterface.md)
+    * [P2PCallback (P2PCallback Interface)](UnifiedCallbackInterface/P2PCallbackInterface.md)
+
+-----
+* [云存储 (Cloud Storage)](CloudStorage/CloudStorage.md)
+    * [上传设置 (Upload Settings)](CloudStorage/UploadSettings.md)
+
