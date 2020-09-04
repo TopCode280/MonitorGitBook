@@ -7,3 +7,8 @@
 
 （Set the push address of the alarm picture and cache the alarm picture to the remote end. After setting setPictureUrl, the device will push the picture and uid information to the set server address, and the server will process the picture and return the address of the server to the device. When a pushMsg is used, imageUrl will be the returned address to push the message.）
 
+
+
+#### `流程图`
+
+![alarmPushProcess](D:\MonitorGitBook\images\alarmPushProcess.png)

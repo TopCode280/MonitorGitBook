@@ -111,7 +111,8 @@ public class ConfigureNetActivity extends AppCompatActivity {
         int wifiType = 1;//wpa/wpa2 encrypt type
 
         StringBuilder builder = new StringBuilder();
-        String wifiString = builder.append("S=").append(ssid).append(",")
+        String wifiString =
+                builder.append("S=").append(ssid).append(",")
                 .append("P=").append(pwd).append(",")
                 .append("A=").append("15111520684").append(",")//任意字符串或者用户app账号
                 .append("U=").append("abc").append(",")//填一个任意字符串
