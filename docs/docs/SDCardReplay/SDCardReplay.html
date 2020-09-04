@@ -444,6 +444,84 @@
     
 
     
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="../UnifiedCallbackInterface/UnifiedCallbackInterface.html">
+            
+                <a href="../UnifiedCallbackInterface/UnifiedCallbackInterface.html">
+            
+                    
+                    统一回调接口 (Unified Callback Interface)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.1.1" data-path="../UnifiedCallbackInterface/P2PCallbackInterface.html">
+            
+                <a href="../UnifiedCallbackInterface/P2PCallbackInterface.html">
+            
+                    
+                    P2PCallback (P2PCallback Interface)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="11.1" data-path="../CloudStorage/CloudStorage.html">
+            
+                <a href="../CloudStorage/CloudStorage.html">
+            
+                    
+                    云存储 (Cloud Storage)
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="11.1.1" data-path="../CloudStorage/UploadSettings.html">
+            
+                <a href="../CloudStorage/UploadSettings.html">
+            
+                    
+                    上传设置 (Upload Settings)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
 
     <li class="divider"></li>
 
@@ -565,6 +643,40 @@ Camera.playBackVideoStart(String file, <span class="hljs-keyword">int</span> m, 
         <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">recvAudio</span><span class="hljs-params">(<span class="hljs-keyword">byte</span>[] var1, <span class="hljs-keyword">long</span> var2)</span></span>;
 }
 </code></pre>
+<ol>
+<li><p>&#x67E5;&#x8BE2;sd&#x5361;&#x56DE;&#x653E;&#x500D;&#x6570;</p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+     * &#x67E5;&#x8BE2;sd&#x5361;&#x5F53;&#x524D;&#x56DE;&#x653E;&#x7684;&#x500D;&#x6570;&#xFF0C;data&#x4E3A;&#x500D;&#x6570;&#xFF0C;eg. data=1.5&#x4EE3;&#x8868;1.5&#x500D;&#x901F;
+     * <span class="hljs-doctag">@param</span> callback
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">getPlaybackSpeed</span><span class="hljs-params">(P2PCallback&lt;Integer&gt; callback)</span>
+</span></code></pre>
+</li>
+<li><p>&#x8BBE;&#x7F6E;sd&#x5361;&#x56DE;&#x653E;&#x500D;&#x6570;</p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+     * &#x8BBE;&#x7F6E;&#x5F53;&#x524D;&#x8FDE;&#x63A5;&#x7528;&#x6237;&#x56DE;&#x653E;&#x7684;&#x500D;&#x6570;
+     * <span class="hljs-doctag">@param</span> speed &#x500D;&#x6570;
+     * <span class="hljs-doctag">@param</span> callback data &#x8FD4;&#x56DE;&#x8BBE;&#x7F6E;&#x6210;&#x529F;&#x7684;&#x500D;&#x6570;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setPlaybackSpeed</span><span class="hljs-params">(Integer speed,P2PCallback&lt;Integer&gt; callback)</span>
+</span></code></pre>
+</li>
+<li><p>&#x6682;&#x505C;&#x6B63;&#x5728;&#x64AD;&#x653E;&#x7684;sd&#x5361;&#x56DE;&#x653E;</p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+     * &#x6682;&#x505C;&#x5F53;&#x524D;&#x64AD;&#x653E;&#x7684;sd&#x5361;&#x5F55;&#x50CF;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">pausePlayback</span><span class="hljs-params">(P2PCallback&lt;String&gt; callback)</span>
+</span></code></pre>
+</li>
+<li><p>&#x6062;&#x590D;&#x6682;&#x505C;&#x7684;sd&#x5361;&#x56DE;&#x653E;</p>
+<pre><code class="lang-java"> <span class="hljs-comment">/**
+     * &#x6062;&#x590D;&#x64AD;&#x653E;sd&#x5361;&#x89C6;&#x9891;
+     * <span class="hljs-doctag">@param</span> callback
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">resumePlayback</span><span class="hljs-params">(P2PCallback&lt;String&gt; callback)</span>
+</span></code></pre>
+</li>
+</ol>
 
                                 
                                 </section>
@@ -608,7 +720,7 @@ Camera.playBackVideoStart(String file, <span class="hljs-keyword">int</span> m, 
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SD卡回放 (SDCard Replay)","level":"9.1","depth":1,"next":{"title":"API使用接口说明 (API use interface description)","level":"9.1.1","depth":2,"path":"SDCardReplay/APIInterfaceDescription.md","ref":"SDCardReplay/APIInterfaceDescription.md","articles":[]},"previous":{"title":"报警侦测消息接收 (Alarm detection message reception)","level":"8.1.1","depth":2,"path":"MessagePush/AlarmMessageReceive.md","ref":"MessagePush/AlarmMessageReceive.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"SDCardReplay/SDCardReplay.md","mtime":"2019-12-14T01:59:42.385Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-25T01:12:07.218Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SD卡回放 (SDCard Replay)","level":"9.1","depth":1,"next":{"title":"API使用接口说明 (API use interface description)","level":"9.1.1","depth":2,"path":"SDCardReplay/APIInterfaceDescription.md","ref":"SDCardReplay/APIInterfaceDescription.md","articles":[]},"previous":{"title":"报警侦测消息接收 (Alarm detection message reception)","level":"8.1.1","depth":2,"path":"MessagePush/AlarmMessageReceive.md","ref":"MessagePush/AlarmMessageReceive.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"SDCardReplay/SDCardReplay.md","mtime":"2020-08-28T08:30:52.489Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-28T08:41:23.953Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

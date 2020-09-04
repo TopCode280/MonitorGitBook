@@ -95,3 +95,43 @@ public interface recvAudioCallback {
 }
 ```
 
+1. 查询sd卡回放倍数
+
+   ```java
+   /**
+        * 查询sd卡当前回放的倍数，data为倍数，eg. data=1.5代表1.5倍速
+        * @param callback
+        */
+       public void getPlaybackSpeed(P2PCallback<Integer> callback)
+   ```
+
+2. 设置sd卡回放倍数
+
+   ```java
+   /**
+        * 设置当前连接用户回放的倍数
+        * @param speed 倍数
+        * @param callback data 返回设置成功的倍数
+        */
+       public void setPlaybackSpeed(Integer speed,P2PCallback<Integer> callback)
+   ```
+
+3. 暂停正在播放的sd卡回放
+
+   ```java
+   /**
+        * 暂停当前播放的sd卡录像
+        */
+       public void pausePlayback(P2PCallback<String> callback)
+   ```
+
+4. 恢复暂停的sd卡回放
+
+   ```java
+    /**
+        * 恢复播放sd卡视频
+        * @param callback
+        */
+       public void resumePlayback(P2PCallback<String> callback)
+   ```
+

@@ -913,7 +913,7 @@ public class MainActivity extends AppCompatActivity {
     private void connectCamera() {
         String uid = etUid.getText().toString().trim();
 //        mCamera = new Camera("MAEVIA-000006-UKUWG" + "," + singaporeInit);
-        mCamera = new Camera("KHJA-259243-VYPXP" + "," + khjInit);
+        mCamera = new Camera(uid + "," + khjInit);
         mCamera.connect("admin", "888888", 0, new Camera.onOffLineCallback() {
             @Override
             public void Online(Camera m, final int isSuccess) {

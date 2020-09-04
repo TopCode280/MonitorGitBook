@@ -277,12 +277,16 @@ mCamera.formatSdcard(new Camera.successCallbackI() {
                         //但是，连接设备再从设备端下载图片可能由于网络等各种原因造成下载图片失败，为了确保下载图片成功，用户可以调用mCamera.setPictureUrl，
                         //设置一个服务器图片上传的接口，设置改接口后，设备会向该接口上传图片，设备在推送到setPhpServer接口的json数据中包含一个imgUrl字段，就是上传图片的地址，用户可以使用
                         //该url地址从服务器下载报警图片，服务器下载的url地址必须是"服务器上传报警图片接口/图片的名称"
+// 服务器接口设置2个参数接收 java类型 @RequestParam("imgFile") MultipartFile imgFile,String uid
+// 服务器处理完成该请求如果成功 {int code,String message,Object data} 例如 {1,"success","报警图片的下载地址url"}
 
 // device alarm upload to the above setPhpServer interface json data contains the name of the picture, you can connect to the device and use mCamera.downLoadFile () to download the picture,
                          //However, connecting the device and downloading the image from the device may fail to download the image due to various reasons such as the network. To ensure that the downloaded image is successful, the user can call mCamera.setPictureUrl.
                          // Set a server image upload interface, after setting the interface, the device will upload an image to the interface, the device in the json data pushed to the setPhpServer interface contains an imgUrl field, which is the address of the uploaded image, the user can use
                          //The url address downloads the alarm picture from the server. The url address downloaded by the server must be "server upload alarm picture interface/picture name"
-                        mCamera.setPictureUrl("服务器上传报警图片接口", new Camera.successCallback() {
+// The server interface sets 2 parameters to receive java type @RequestParam("imgFile") MultipartFile imgFile,String uid
+// If the request is successfully processed by the server {int code,String message,Object data} For example {1,"success","download URL of alarm picture"}
+                        mCamera.setPictureUrl("服务器上传报警图片接口(全路径)", new Camera.successCallback() {
                             @Override
                             public void success(boolean b) {
 

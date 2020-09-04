@@ -404,7 +404,7 @@ public class MainActivity extends AppCompatActivity {
                         mCamera.queryDeviceInfo(new Camera.deviceInfoCallback() {
                             @Override
                             //sdcardTotal 设备SD卡总容量   the total size of SDcard MB，sdcardFree the free size 设备SD卡剩余容量
-                            public void deviceInfo(int sdcardTotal, int sdcardFree, byte v1, byte v2, byte v3, byte v4, String model, String vendor, String a) {
+                            public void deviceInfo(int sdcardTotal, int sdcardFree, int v1, int v2, int v3, int v4, String model, String vendor, String a) {
                                 StringBuilder builder = new StringBuilder();
                                 String version = builder.append(v2).append(".").append(v3).append(".").append(v4).toString();//固件版本  firmware version
 

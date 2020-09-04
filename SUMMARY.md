@@ -33,6 +33,7 @@
 -----
 * [消息推送 (Message push)](MessagePush/MessagePush.md)
     * [报警侦测消息接收 (Alarm detection message reception)](MessagePush/AlarmMessageReceive.md)
+    * [报警图片推送设置 (Alarm picture push settings)](MessagePush/AlarmPicturePushSettings.md)
 
 -----
 * [SD卡回放 (SDCard Replay)](SDCardReplay/SDCardReplay.md)
