@@ -11,4 +11,4 @@
 
 #### `流程图`
 
-![alarmPushProcess](D:\MonitorGitBook\images\alarmPushProcess.png)
+![alarmPushProcess](https://github.com/TopCode280/MonitorGitBook/blob/master/images/alarmPushProcess.png)
