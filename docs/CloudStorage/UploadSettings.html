@@ -624,6 +624,19 @@
                     }
                 });
 </code></pre>
+<p>5.&#x83B7;&#x53D6;&#x4E91;&#x5B58;&#x50A8;&#x4E0A;&#x4F20;&#x5F00;&#x5173;&#x72B6;&#x6001;</p>
+<pre><code class="lang-java">mCamera.getCloundStorage(<span class="hljs-keyword">new</span> Camera.getCloundStorageCallback(<span class="hljs-keyword">boolean</span> var1, <span class="hljs-keyword">int</span> var2){
+    <span class="hljs-comment">// var1 &#x6807;&#x8BC6;&#x4E91;&#x5B58;&#x50A8;&#x5F00;&#x542F;&#x72B6;&#x6001; true&#x6807;&#x8BC6;&#x5F00;&#x542F;</span>
+    <span class="hljs-comment">// var2 &#x7B49;&#x4E8E;1&#x6807;&#x8BC6;&#x4E91;&#x5B58;&#x50A8;&#x5957;&#x9910;&#x7C7B;&#x578B;</span>
+});
+</code></pre>
+<p>6.&#x8BBE;&#x7F6E;&#x4E91;&#x5B58;&#x50A8;&#x4E0A;&#x4F20;&#x5F00;&#x5173;&#x72B6;&#x6001;</p>
+<pre><code class="lang-java">mCamera.(<span class="hljs-keyword">boolean</span> start, <span class="hljs-keyword">int</span> type,<span class="hljs-keyword">new</span> Camera.successCallback(<span class="hljs-keyword">boolean</span> var1){
+    <span class="hljs-comment">// start  &#x8BBE;&#x7F6E;true&#x6807;&#x8BC6;&#x5F00;&#x59CB; false &#x6807;&#x8BC6;&#x5173;&#x95ED;</span>
+    <span class="hljs-comment">// type   &#x5F00;&#x542F;&#x6216;&#x5173;&#x95ED;&#x7684;&#x5957;&#x9910;&#x7C7B;&#x578B;</span>
+    <span class="hljs-comment">// var1   &#x8868;&#x793A;&#x8BBE;&#x7F6E;&#x6210;&#x529F;&#x6216;&#x5931;&#x8D25;</span>
+})
+</code></pre>
 </li>
 </ol>
 
@@ -665,7 +678,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"上传设置 (Upload Settings)","level":"11.1.1","depth":2,"previous":{"title":"云存储 (Cloud Storage)","level":"11.1","depth":1,"path":"CloudStorage/CloudStorage.md","ref":"CloudStorage/CloudStorage.md","articles":[{"title":"上传设置 (Upload Settings)","level":"11.1.1","depth":2,"path":"CloudStorage/UploadSettings.md","ref":"CloudStorage/UploadSettings.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"CloudStorage/UploadSettings.md","mtime":"2020-08-28T08:38:19.512Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-04T09:22:23.220Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"上传设置 (Upload Settings)","level":"11.1.1","depth":2,"previous":{"title":"云存储 (Cloud Storage)","level":"11.1","depth":1,"path":"CloudStorage/CloudStorage.md","ref":"CloudStorage/CloudStorage.md","articles":[{"title":"上传设置 (Upload Settings)","level":"11.1.1","depth":2,"path":"CloudStorage/UploadSettings.md","ref":"CloudStorage/UploadSettings.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"CloudStorage/UploadSettings.md","mtime":"2021-02-04T09:52:48.534Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-02-04T09:57:22.936Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -673,6 +686,10 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

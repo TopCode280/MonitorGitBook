@@ -57,4 +57,21 @@
    
    ```
 
+   5.获取云存储上传开关状态
    
+   ```java
+   mCamera.getCloundStorage(new Camera.getCloundStorageCallback(boolean var1, int var2){
+       // var1 标识云存储开启状态 true标识开启
+       // var2 等于1标识云存储套餐类型
+   });
+   ```
+   
+   6.设置云存储上传开关状态
+   
+   ```java
+   mCamera.(boolean start, int type,new Camera.successCallback(boolean var1){
+       // start  设置true标识开始 false 标识关闭
+       // type   开启或关闭的套餐类型
+       // var1   表示设置成功或失败
+   })
+   ```
