@@ -1,3 +1,7 @@
+
+
+
+
 # 设备设置 (Device settings)
 
 ##### 设备云台转动  Equipment pan/tilt
@@ -424,3 +428,50 @@ if (!TextUtils.isEmpty(s)) {
    }
 });
 ```
+
+###### 定时开关机
+
+```java
+String plan = "1618915092000-1618915092001\n1618915092033-1618915092055" // 关闭时间-开启时间,多个定时任务用 \n 分隔
+camera.addTimedRecordVideoTask(plan,b -> {
+                             if(b){
+                                 log.i("设置定时任务成功")
+                             }
+                            });
+```
+
+##### 智能夜视
+
+```java
+camera.setSwitch(off, b -> {  // off = 0 no = 1 int值 1开0关
+     if(b){
+         log.i("设置智能夜视模式成功");
+       }
+});
+```
+
+##### 摄像头校准
+
+```java
+camera.setPtz(Camera.AVIOCTRL_MOTOR_RESET_POSITION, 0);
+```
+
+##### 白光灯开关
+
+```java
+camera.setSwitch(finalI, b -> { // finalI = 1 开 =0 关
+                            emitter.onNext(b);
+                            emitter.onComplete();
+                        });
+```
+
+##### 重启设备
+
+```java
+ camera.deviceReboot(b -> {
+     if(b){
+        log.i("重启成功");
+       }
+});
+```
+
