@@ -956,7 +956,8 @@ camera.addTimedRecordVideoTask(plan,b -&gt; {
                             });
 </code></pre>
 <h5 id="&#x667A;&#x80FD;&#x591C;&#x89C6;">&#x667A;&#x80FD;&#x591C;&#x89C6;</h5>
-<pre><code class="lang-java">camera.setSwitch(off, b -&gt; {  <span class="hljs-comment">// off = 0 no = 1 int&#x503C; 1&#x5F00;0&#x5173;</span>
+<pre><code class="lang-java">
+camera.setSwitch(off, b -&gt; {  <span class="hljs-comment">// off = 0 no = 1 int&#x503C; 1&#x5F00;0&#x5173; &#x8BBE;&#x5907;&#x5404;&#x79CD;&#x5F00;&#x5173;&#x91CF;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x6309;&#x4F4D;&#x8BA1;&#x7B97;&#x3002;&#x7B2C;0&#x4F4D;&#x4EE3;&#x8868;&#x67AA;&#x673A;&#x767D;&#x5149;&#x706F;&#xFF0C;&#x7B2C;&#x4E00;&#x4F4D;&#x4EE3;&#x8868;&#x667A;&#x80FD;&#x591C;&#x89C6;</span>
      <span class="hljs-keyword">if</span>(b){
          log.i(<span class="hljs-string">&quot;&#x8BBE;&#x7F6E;&#x667A;&#x80FD;&#x591C;&#x89C6;&#x6A21;&#x5F0F;&#x6210;&#x529F;&quot;</span>);
        }
@@ -966,7 +967,7 @@ camera.addTimedRecordVideoTask(plan,b -&gt; {
 <pre><code class="lang-java">camera.setPtz(Camera.AVIOCTRL_MOTOR_RESET_POSITION, <span class="hljs-number">0</span>);
 </code></pre>
 <h5 id="&#x767D;&#x5149;&#x706F;&#x5F00;&#x5173;">&#x767D;&#x5149;&#x706F;&#x5F00;&#x5173;</h5>
-<pre><code class="lang-java">camera.setSwitch(finalI, b -&gt; { <span class="hljs-comment">// finalI = 1 &#x5F00; =0 &#x5173;</span>
+<pre><code class="lang-java">camera.setSwitch(finalI, b -&gt; { <span class="hljs-comment">// finalI = 1 &#x5F00; =0 &#x5173; &#x8BBE;&#x5907;&#x5404;&#x79CD;&#x5F00;&#x5173;&#x91CF;&#x7684;&#x72B6;&#x6001;&#xFF0C;&#x6309;&#x4F4D;&#x8BA1;&#x7B97;&#x3002;&#x7B2C;0&#x4F4D;&#x4EE3;&#x8868;&#x67AA;&#x673A;&#x767D;&#x5149;&#x706F;&#xFF0C;&#x7B2C;&#x4E00;&#x4F4D;&#x4EE3;&#x8868;&#x667A;&#x80FD;&#x591C;&#x89C6;</span>
                             emitter.onNext(b);
                             emitter.onComplete();
                         });
@@ -1021,7 +1022,7 @@ camera.addTimedRecordVideoTask(plan,b -&gt; {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"设备设置 (Device settings)","level":"7.1.6","depth":2,"next":{"title":"设备信息 (Device Info)","level":"7.1.7","depth":2,"path":"LiveVideo/DeviceInfo.md","ref":"LiveVideo/DeviceInfo.md","articles":[]},"previous":{"title":"录制视频 (Recording video)","level":"7.1.5","depth":2,"path":"LiveVideo/RecordingVideo.md","ref":"LiveVideo/RecordingVideo.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"LiveVideo/DeviceSetting.md","mtime":"2021-04-21T01:59:48.537Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-21T02:02:33.277Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"设备设置 (Device settings)","level":"7.1.6","depth":2,"next":{"title":"设备信息 (Device Info)","level":"7.1.7","depth":2,"path":"LiveVideo/DeviceInfo.md","ref":"LiveVideo/DeviceInfo.md","articles":[]},"previous":{"title":"录制视频 (Recording video)","level":"7.1.5","depth":2,"path":"LiveVideo/RecordingVideo.md","ref":"LiveVideo/RecordingVideo.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"LiveVideo/DeviceSetting.md","mtime":"2021-04-21T07:37:04.578Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-04-21T07:40:11.266Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

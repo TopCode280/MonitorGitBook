@@ -443,7 +443,8 @@ camera.addTimedRecordVideoTask(plan,b -> {
 ##### 智能夜视
 
 ```java
-camera.setSwitch(off, b -> {  // off = 0 no = 1 int值 1开0关
+
+camera.setSwitch(off, b -> {  // off = 0 no = 1 int值 1开0关 设备各种开关量的状态，按位计算。第0位代表枪机白光灯，第一位代表智能夜视
      if(b){
          log.i("设置智能夜视模式成功");
        }
@@ -459,7 +460,7 @@ camera.setPtz(Camera.AVIOCTRL_MOTOR_RESET_POSITION, 0);
 ##### 白光灯开关
 
 ```java
-camera.setSwitch(finalI, b -> { // finalI = 1 开 =0 关
+camera.setSwitch(finalI, b -> { // finalI = 1 开 =0 关 设备各种开关量的状态，按位计算。第0位代表枪机白光灯，第一位代表智能夜视
                             emitter.onNext(b);
                             emitter.onComplete();
                         });
