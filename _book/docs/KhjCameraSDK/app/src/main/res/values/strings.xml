@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">看护家SDK</string>
+    <string name="configureNet">设备配网</string>
+    <string name="connectCamera">连接设备</string>
+    <string name="receiveVideo">接受视频</string>
+    <string name="sendAudio">发送音频</string>
+    <string name="receiveAudio">接受音频</string>
+    <string name="recordVideo">手机录像</string>
+    <string name="takePhoto">手机截图</string>
+    <string name="setVideoQuqlity">视频质量设置</string>
+    <string name="getAudienceNum">观看人数查看</string>
+    <string name="rotateCamera">云台转动</string>
+    <string name="getCameraInfos">获取设备信息</string>
+    <string name="SDcardMedia">SD卡视频图片</string>
+    <string name="netMode">网络设置</string>
+    <string name="flipVideo">画面翻转</string>
+    <string name="recordSet">录像设置</string>
+    <string name="cameraSwitch">设备开关</string>
+    <string name="audioVolume">声音设置</string>
+    <string name="timeSchedule">添加定时计划</string>
+    <string name="disconnect">断开连接</string>
+    <string name="stopVideo">取消接受视频</string>
+    <string name="modifyPWD">修改设备密码</string>
+    <string name="timezoneSet">设置设备时区</string>
+    <string name="alarm">移动侦测和声音侦测报警</string>
+    <string name="formatSDcard">格式化SD卡</string>
+    <string name="broadcast">设备广播</string>
+    <string name="searchLan">搜索局域网设备</string>
+    <string name="setHeartbeat">设置心跳包</string>
+    <string name="alarmServer">报警推送地址</string>
+    <string name="playback">回放SD卡视频</string>
+    <string name="createQRcode">生成二维码</string>
+    <string name="inputWifiPwd">输入WIFI密码</string>
+    <string name="selectWifi">选择WIFI</string>
+    <string name="apmode">APmode</string>
+</resources>
