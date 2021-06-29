@@ -482,6 +482,8 @@ camera.setSwitch(finalI, b -> { // finalI = 1 开 =0 关 设备各种开关量�
  CameraSendCommandBufferCall cameraSendCommandBufferCall = new CameraSendCommandBufferCall() {
             @Override
             public void call(int var1, byte var2, String var3) {
+                
+                // 查询回调
                   if(b == 32){
                 // 上下反转回调
                   if( s.eqals("1")){
@@ -489,12 +491,29 @@ camera.setSwitch(finalI, b -> { // finalI = 1 开 =0 关 设备各种开关量�
                   } else if( s.eqals("0")) {
                    // 上下反转关闭
                   }
-                }else if (b == 34){
+                } else if (b == 34){
                  // 左右反转回调
                   if( s.eqals("1")){
                    // 左右反转打开
                   } else if( s.eqals("0")) {
                    // 左右反转关闭
+                  }
+                } 
+                
+                // 设置回调
+                if (b == 33){
+                 // 上下反转设置回调
+                  if( s.equalsIgnoreCase("ok")){
+                   // 上下反转设置成功
+                  } else  {
+                   // 上下反转设置失败
+                  }
+                } else if (b == 35){
+                  // 左右反转设置回调
+                  if( s.equalsIgnoreCase("ok")){
+                  // 左右反转设置成功
+                  } else {
+                  // 左右反转设置失败
                   }
                 }
             }
