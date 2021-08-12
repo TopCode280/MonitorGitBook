@@ -587,16 +587,18 @@
 <blockquote>
 <p>&#x4E0D;&#x540C;&#x7684;&#x6444;&#x50CF;&#x5934;&#x8FDE;&#x63A5;&#x7684;p2p&#x670D;&#x52A1;&#x5668;&#x4E0D;&#x540C;&#xFF0C;&#x6839;&#x636E;UID&#x524D;&#x7F00;&#x53EF;&#x4EE5;&#x533A;&#x5206;&#x4E0D;&#x540C;&#x7684;&#x670D;&#x52A1;&#x5668;&#x3002;</p>
 </blockquote>
-<pre><code class="lang-java"><span class="hljs-keyword">private</span> String singaporeInit = <span class="hljs-string">&quot;EBGCFGBKKHJMGAJPELGNFPEAHNMMHCNPGFFDBMCIBBJJLGLPCNAHCLOPGJLMJGLKANMPLEDAODMKBACDJHNHJN:KHJTEC100&quot;</span>;<span class="hljs-comment">//this for KHJ</span>
-<span class="hljs-keyword">private</span> String khjInit = <span class="hljs-string">&quot;EBGEEHBHKOJHHNJNEMGNFPEJHNNHHENNGKFMBCDNAHJBLLKPDMAMCCPKGBLCJFLJAOMPLEDAODMEAGCKJMNGIHAN:KHJTEC001&quot;</span>;<span class="hljs-comment">//this for MAVIEA</span>
-<span class="hljs-keyword">private</span> String hmInit = <span class="hljs-string">&quot;EBGJFNBCKJJLGHJLEPGPFNEBHBMFHLNAHAFIALDLAAJBKBKJDIAPDJPMGOKAIPLOAANKKACEPDNNAF:KHJTECHM&quot;</span>;<span class="hljs-comment">//this for IRUMA</span>
+<pre><code class="lang-java"><span class="hljs-keyword">private</span> String initString = <span class="hljs-string">&quot;EBGCFGBKKHJMGAJPELGNFPEAHNMMHCNPGFFDBMCIBBJJLGLPCNAHCLOPGJLMJGLKANMPLEDAODMKBACDJHNHJN:KHJTEC100&quot;</span>;<span class="hljs-comment">//this for KHJ</span>
+<span class="hljs-keyword">private</span> String initString = <span class="hljs-string">&quot;EBGEEHBHKOJHHNJNEMGNFPEJHNNHHENNGKFMBCDNAHJBLLKPDMAMCCPKGBLCJFLJAOMPLEDAODMEAGCKJMNGIHAN:KHJTEC001&quot;</span>;<span class="hljs-comment">//this for MAVIEA</span>
+<span class="hljs-keyword">private</span> String initString = <span class="hljs-string">&quot;EBGJFNBCKJJLGHJLEPGPFNEBHBMFHLNAHAFIALDLAAJBKBKJDIAPDJPMGOKAIPLOAANKKACEPDNNAF:KHJTECHM&quot;</span>;<span class="hljs-comment">//this for IRUMA</span>
+<span class="hljs-keyword">private</span> String initString = <span class="hljs-string">&quot;EBGCFGBKKHJNGBJJEFHPFBENHLNBHAMGHOEIANDIBOINKHLBCCBDCHOCHOKLJLKIBNNILECMPPNHAP:KHJAISA001&quot;</span>;<span class="hljs-comment">//this for AISA</span>
+<span class="hljs-keyword">private</span> String initString = <span class="hljs-string">&quot;EDGGFCBNKNJHGLJEEEGFFHEIHNMMHCNLGGFABJCAAGJBLJLHDLAOCDOPGJLKIKLJANMNKBDKOPMGBMCOIG:KEUROPE001&quot;</span>;<span class="hljs-comment">//this for KEUROPE</span>
+<span class="hljs-keyword">private</span> String initString = <span class="hljs-string">&quot;EEGNFJBDLFINHBINFMGEEJFGGEMMGIMDGDEKACDLBNIKKDKBCPBKDDPOHKKLIALLBDNFKEDHPLNHBACKIC:KHJ002&quot;</span>;<span class="hljs-comment">//this for KHJ002</span>
+<span class="hljs-keyword">private</span> String initString = <span class="hljs-string">&quot;EBGEFABMKGJOGCJNEMGLFJEFHCMDHNNGHGFMBBDOAHJDLKKODNALCAPIGHLFIFLPBHNCKFDLPHNKBGDI:KUSAKEY001&quot;</span>;<span class="hljs-comment">//this for USA</span>
 </code></pre>
 <blockquote>
 <p>&#x62FC;&#x63A5;&#x6444;&#x50CF;&#x5934;UID&#x548C;&#x670D;&#x52A1;&#x5668;&#x7F16;&#x7801;&#x6784;&#x9020;&#x51FA;camera&#x5BF9;&#x8C61;&#xFF0C;&#x5982;&#x679C; &#x4E0D;&#x62FC;&#x63A5;&#x670D;&#x52A1;&#x5668;&#x7F16;&#x7801;&#xFF0C;&#x9ED8;&#x8BA4;&#x4F1A;&#x4F7F;&#x7528;KHJ&#x670D;&#x52A1;&#x5668;&#x7F16;&#x7801;</p>
 </blockquote>
-<pre><code class="lang-java">    mCamera = <span class="hljs-keyword">new</span> Camera(<span class="hljs-string">&quot;MAEVIA-000005-KXPBT&quot;</span> + <span class="hljs-string">&quot;,&quot;</span> + singaporeInit);<span class="hljs-comment">//&#x65B0;&#x52A0;&#x5761;&#x670D;&#x52A1;&#x5668;</span>
-    mCamera = <span class="hljs-keyword">new</span> Camera(<span class="hljs-string">&quot;KHJ-070923-LSUFN&quot;</span> + <span class="hljs-string">&quot;,&quot;</span> + khjInit);<span class="hljs-comment">//&#x770B;&#x62A4;&#x5BB6;&#x670D;&#x52A1;&#x5668;</span>
-    mCamera = <span class="hljs-keyword">new</span> Camera(<span class="hljs-string">&quot;IRMSA-000003-ERFWD&quot;</span> + <span class="hljs-string">&quot;,&quot;</span> + hmInit);<span class="hljs-comment">//&#x5370;&#x5C3C;&#x670D;&#x52A1;&#x5668;</span>
+<pre><code class="lang-java">    mCamera = <span class="hljs-keyword">new</span> Camera(device_uid + <span class="hljs-string">&quot;,&quot;</span> + initString);<span class="hljs-comment">//&#x65B0;&#x52A0;&#x5761;&#x670D;&#x52A1;&#x5668;</span>
      mCamera = <span class="hljs-keyword">new</span> Camera(<span class="hljs-string">&quot;KHJ-070923-LSUFN&quot;</span>);<span class="hljs-comment">//&#x9ED8;&#x8BA4;&#x8FDE;&#x63A5;KHJ&#x670D;&#x52A1;&#x5668;</span>
 </code></pre>
 <h3 id="22&#x8FDE;&#x63A5;&#x6444;&#x50CF;&#x5934;">2.2&#x8FDE;&#x63A5;&#x6444;&#x50CF;&#x5934;</h3>
@@ -654,11 +656,12 @@
 <td style="text-align:center">&#x6444;&#x50CF;&#x5934;&#x5173;&#x95ED;&#x4E86;&#x8FDE;&#x63A5;</td>
 </tr>
 <tr>
-<td style="text-align:center">-20009</td>
-<td style="text-align:center">&#x5BC6;&#x7801;&#x9519;&#x8BEF;</td>
+<td style="text-align:center">-90</td>
+<td style="text-align:center">&#x8BBE;&#x5907;&#x79BB;&#x7EBF;</td>
 </tr>
 <tr>
-<td style="text-align:center"></td>
+<td style="text-align:center">-20009</td>
+<td style="text-align:center">&#x5BC6;&#x7801;&#x9519;&#x8BEF;</td>
 </tr>
 </tbody>
 </table>
@@ -705,7 +708,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"初始化Camera (Camera Init)","level":"5.1","depth":1,"next":{"title":"设备配网 (Equipment distribution network)","level":"6.1","depth":1,"path":"DeviceSettingNetWork/DeviceSettingNetWork.md","ref":"DeviceSettingNetWork/DeviceSettingNetWork.md","articles":[{"title":"二维码配网 (QR Code distribution network)","level":"6.1.1","depth":2,"path":"DeviceSettingNetWork/QrCodeConnection.md","ref":"DeviceSettingNetWork/QrCodeConnection.md","articles":[]},{"title":"AP模式配网 (AP mode distribution network)","level":"6.1.2","depth":2,"path":"DeviceSettingNetWork/ApModeConnection.md","ref":"DeviceSettingNetWork/ApModeConnection.md","articles":[]}]},"previous":{"title":"Camera运行概述 (Camera operation overview)","level":"4.1","depth":1,"path":"CameraOperationOverview/CameraOperationOverview.md","ref":"CameraOperationOverview/CameraOperationOverview.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"CameraInit/CameraInit.md","mtime":"2020-01-08T07:28:03.985Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-29T03:45:58.783Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"初始化Camera (Camera Init)","level":"5.1","depth":1,"next":{"title":"设备配网 (Equipment distribution network)","level":"6.1","depth":1,"path":"DeviceSettingNetWork/DeviceSettingNetWork.md","ref":"DeviceSettingNetWork/DeviceSettingNetWork.md","articles":[{"title":"二维码配网 (QR Code distribution network)","level":"6.1.1","depth":2,"path":"DeviceSettingNetWork/QrCodeConnection.md","ref":"DeviceSettingNetWork/QrCodeConnection.md","articles":[]},{"title":"AP模式配网 (AP mode distribution network)","level":"6.1.2","depth":2,"path":"DeviceSettingNetWork/ApModeConnection.md","ref":"DeviceSettingNetWork/ApModeConnection.md","articles":[]}]},"previous":{"title":"Camera运行概述 (Camera operation overview)","level":"4.1","depth":1,"path":"CameraOperationOverview/CameraOperationOverview.md","ref":"CameraOperationOverview/CameraOperationOverview.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"CameraInit/CameraInit.md","mtime":"2021-08-12T03:09:06.047Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-12T03:09:50.586Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

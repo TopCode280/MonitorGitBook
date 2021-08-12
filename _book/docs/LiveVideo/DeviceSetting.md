@@ -476,3 +476,60 @@ camera.setSwitch(finalI, b -> { // finalI = 1 开 =0 关 设备各种开关量�
 });
 ```
 
+###### 设备反转
+
+```java
+ CameraSendCommandBufferCall cameraSendCommandBufferCall = new CameraSendCommandBufferCall() {
+            @Override
+            public void call(int var1, byte var2, String var3) {
+                
+                // 查询回调
+                  if(b == 32){
+                // 上下反转回调
+                  if( s.eqals("1")){
+                   // 上下反转打开
+                  } else if( s.eqals("0")) {
+                   // 上下反转关闭
+                  }
+                } else if (b == 34){
+                 // 左右反转回调
+                  if( s.eqals("1")){
+                   // 左右反转打开
+                  } else if( s.eqals("0")) {
+                   // 左右反转关闭
+                  }
+                } 
+                
+                // 设置回调
+                if (b == 33){
+                 // 上下反转设置回调
+                  if( s.equalsIgnoreCase("ok")){
+                   // 上下反转设置成功
+                  } else  {
+                   // 上下反转设置失败
+                  }
+                } else if (b == 35){
+                  // 左右反转设置回调
+                  if( s.equalsIgnoreCase("ok")){
+                  // 左右反转设置成功
+                  } else {
+                  // 左右反转设置失败
+                  }
+                }
+            }
+        };
+
+设置设备反转
+
+@param type byte类型 type == 33 上下反转 type == 35左右反转
+@param data String类型 "1" 反转 "0" 不反转 
+
+camera.sendCommonBuffer((byte) type, data, cameraSendCommandBufferCall);
+
+查询设备反转设置
+@param type byte类型 type == 32 查询上下反转 type == 34查询左右反转
+@param data String类型 查询时传""
+    
+camera.sendCommonBuffer((byte) type, data, cameraSendCommandBufferCall );
+```
+

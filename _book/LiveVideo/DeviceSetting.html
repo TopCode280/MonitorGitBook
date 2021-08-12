@@ -983,6 +983,8 @@ camera.setSwitch(off, b -&gt; {  <span class="hljs-comment">// off = 0 no = 1 in
 <pre><code class="lang-java"> CameraSendCommandBufferCall cameraSendCommandBufferCall = <span class="hljs-keyword">new</span> CameraSendCommandBufferCall() {
             <span class="hljs-meta">@Override</span>
             <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">call</span><span class="hljs-params">(<span class="hljs-keyword">int</span> var1, <span class="hljs-keyword">byte</span> var2, String var3)</span> </span>{
+
+                <span class="hljs-comment">// &#x67E5;&#x8BE2;&#x56DE;&#x8C03;</span>
                   <span class="hljs-keyword">if</span>(b == <span class="hljs-number">32</span>){
                 <span class="hljs-comment">// &#x4E0A;&#x4E0B;&#x53CD;&#x8F6C;&#x56DE;&#x8C03;</span>
                   <span class="hljs-keyword">if</span>( s.eqals(<span class="hljs-string">&quot;1&quot;</span>)){
@@ -990,12 +992,29 @@ camera.setSwitch(off, b -&gt; {  <span class="hljs-comment">// off = 0 no = 1 in
                   } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>( s.eqals(<span class="hljs-string">&quot;0&quot;</span>)) {
                    <span class="hljs-comment">// &#x4E0A;&#x4E0B;&#x53CD;&#x8F6C;&#x5173;&#x95ED;</span>
                   }
-                }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (b == <span class="hljs-number">34</span>){
+                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (b == <span class="hljs-number">34</span>){
                  <span class="hljs-comment">// &#x5DE6;&#x53F3;&#x53CD;&#x8F6C;&#x56DE;&#x8C03;</span>
                   <span class="hljs-keyword">if</span>( s.eqals(<span class="hljs-string">&quot;1&quot;</span>)){
                    <span class="hljs-comment">// &#x5DE6;&#x53F3;&#x53CD;&#x8F6C;&#x6253;&#x5F00;</span>
                   } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>( s.eqals(<span class="hljs-string">&quot;0&quot;</span>)) {
                    <span class="hljs-comment">// &#x5DE6;&#x53F3;&#x53CD;&#x8F6C;&#x5173;&#x95ED;</span>
+                  }
+                } 
+
+                <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x56DE;&#x8C03;</span>
+                <span class="hljs-keyword">if</span> (b == <span class="hljs-number">33</span>){
+                 <span class="hljs-comment">// &#x4E0A;&#x4E0B;&#x53CD;&#x8F6C;&#x8BBE;&#x7F6E;&#x56DE;&#x8C03;</span>
+                  <span class="hljs-keyword">if</span>( s.equalsIgnoreCase(<span class="hljs-string">&quot;ok&quot;</span>)){
+                   <span class="hljs-comment">// &#x4E0A;&#x4E0B;&#x53CD;&#x8F6C;&#x8BBE;&#x7F6E;&#x6210;&#x529F;</span>
+                  } <span class="hljs-keyword">else</span>  {
+                   <span class="hljs-comment">// &#x4E0A;&#x4E0B;&#x53CD;&#x8F6C;&#x8BBE;&#x7F6E;&#x5931;&#x8D25;</span>
+                  }
+                } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (b == <span class="hljs-number">35</span>){
+                  <span class="hljs-comment">// &#x5DE6;&#x53F3;&#x53CD;&#x8F6C;&#x8BBE;&#x7F6E;&#x56DE;&#x8C03;</span>
+                  <span class="hljs-keyword">if</span>( s.equalsIgnoreCase(<span class="hljs-string">&quot;ok&quot;</span>)){
+                  <span class="hljs-comment">// &#x5DE6;&#x53F3;&#x53CD;&#x8F6C;&#x8BBE;&#x7F6E;&#x6210;&#x529F;</span>
+                  } <span class="hljs-keyword">else</span> {
+                  <span class="hljs-comment">// &#x5DE6;&#x53F3;&#x53CD;&#x8F6C;&#x8BBE;&#x7F6E;&#x5931;&#x8D25;</span>
                   }
                 }
             }
@@ -1057,7 +1076,7 @@ camera.sendCommonBuffer((<span class="hljs-keyword">byte</span>) type, data, cam
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"设备设置 (Device settings)","level":"7.1.6","depth":2,"next":{"title":"设备信息 (Device Info)","level":"7.1.7","depth":2,"path":"LiveVideo/DeviceInfo.md","ref":"LiveVideo/DeviceInfo.md","articles":[]},"previous":{"title":"录制视频 (Recording video)","level":"7.1.5","depth":2,"path":"LiveVideo/RecordingVideo.md","ref":"LiveVideo/RecordingVideo.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"LiveVideo/DeviceSetting.md","mtime":"2021-06-29T03:45:01.446Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-06-29T03:45:58.783Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"设备设置 (Device settings)","level":"7.1.6","depth":2,"next":{"title":"设备信息 (Device Info)","level":"7.1.7","depth":2,"path":"LiveVideo/DeviceInfo.md","ref":"LiveVideo/DeviceInfo.md","articles":[]},"previous":{"title":"录制视频 (Recording video)","level":"7.1.5","depth":2,"path":"LiveVideo/RecordingVideo.md","ref":"LiveVideo/RecordingVideo.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"LiveVideo/DeviceSetting.md","mtime":"2021-06-29T05:58:14.154Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-08-12T03:09:50.586Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
